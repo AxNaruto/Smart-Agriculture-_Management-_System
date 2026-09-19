@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSmart 360 - Academic Project Viva Presentation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="presentation-app">
+
+  <!-- TOP APP BAR -->
+  <header class="pres-header">
+    <div class="pres-header-left">
+      <span class="brand-badge">🌱 AgriSmart 360</span>
+      <span class="header-topic" id="headerTopicDisplay">Capstone Project Viva Evaluation</span>
+      <span class="header-viva-tag">Academic Defense</span>
+    </div>
+    <div class="pres-header-right">
+      <div class="slide-select-wrapper">
+        <select id="slideJumpSelect" aria-label="Jump to Slide">
+          <!-- Populated by JavaScript -->
+        </select>
+      </div>
+      <button class="btn-icon" id="btnFullscreen" title="Toggle Fullscreen (F)">
+        <span>⛶</span> Fullscreen
+      </button>
+    </div>
+  </header>
+
+  <!-- LIVE PROGRESS INDICATOR -->
+  <div class="progress-container">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- SLIDES VIEWPORT (EXACTLY 20 SLIDES) -->
+  <main class="slides-viewport" id="slidesViewport">
+
+    <!-- =========================================================================
+         SLIDE 1: Title, Team ID, Student Names & Credentials
+         ========================================================================= -->
+    <section class="slide active" data-slide="1" data-title="Title & Project Identification">
+      <div class="title-slide-container">
+        <div>
+          <div class="title-top-badge">🎓 Final Year B.Tech / B.E. Viva Voce Capstone Defense</div>
+          <h1 class="title-main-heading">Smart Agriculture Management & Decision Support System</h1>
+          <h2 class="title-sub-heading">AgriSmart 360: A Scalable Full-Stack Engineering Platform for Precision Agronomy</h2>
+          <p class="title-desc">
+            A centralized 3-tier enterprise architecture combining scientific soil nutrient budgeting (N-P-K), stage-specific daily irrigation modeling, dual-regime pest remedies, and direct digital Mandi market access to eliminate agrarian intermediaries.
+          </p>
+        </div>
+
+        <div class="title-metadata-grid">
+          <div class="meta-group">
+            <div class="meta-group-title">Project Identification</div>
+            <div class="meta-group-value">Project Code: AGRI-CS-2026-08</div>
+            <div class="meta-group-sub">Track: Full-Stack Enterprise Web Engineering</div>
+            <div class="meta-group-sub">Academic Year: 2025 – 2026</div>
+          </div>
+          <div class="meta-group">
+            <div class="meta-group-title">Candidate Credentials</div>
+            <div class="meta-group-value">Sumesh S. & Project Team</div>
+            <div class="meta-group-sub">Reg No: 710022104045</div>
+            <div class="meta-group-sub">Team Members: Lead Full-Stack Developers</div>
+          </div>
+          <div class="meta-group">
+            <div class="meta-group-title">Department & Institutional Affiliation</div>
+            <div class="meta-group-value">Dept. of Computer Science & Engineering</div>
+            <div class="meta-group-sub">Affiliated Engineering Institution</div>
+            <div class="meta-group-sub">Supervisor: Internal Project Guide & Evaluation Board</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 2: Introduction & Industry Domain Background
+         ========================================================================= -->
+    <section class="slide" data-slide="2" data-title="Introduction & Domain Background">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 1.0 : Project Context</span>
+          <h2 class="slide-title">Introduction & Industry Domain Background</h2>
+          <p class="slide-subtitle">Agronomic Significance, Agrarian Economy & The Shift to Precision Agriculture</p>
+        </div>
+        <span class="slide-num-pill">Slide 02 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-4">
+          <div class="stat-metric-card">
+            <span class="stat-metric-number">18.3%</span>
+            <span class="stat-metric-label">National GDP Contribution of Agriculture Sector</span>
+          </div>
+          <div class="stat-metric-card">
+            <span class="stat-metric-number">140M+</span>
+            <span class="stat-metric-label">Operational Farm Holdings Nationwide</span>
+          </div>
+          <div class="stat-metric-card">
+            <span class="stat-metric-number">86%</span>
+            <span class="stat-metric-label">Small & Marginal Farmers (&lt; 2 Hectares landholding)</span>
+          </div>
+          <div class="stat-metric-card">
+            <span class="stat-metric-number">30-40%</span>
+            <span class="stat-metric-label">Yield Variation Due to Empirical Guesswork</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 8px;">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Traditional Agronomic Practices</span>
+              <span class="card-badge badge-amber">Empirical Limitations</span>
+            </div>
+            <ul class="academic-list amber-bullets">
+              <li><strong>Heuristic Guesswork:</strong> Fertilization and watering schedules rely heavily on generational intuition rather than chemical soil profiles.</li>
+              <li><strong>Physical Information Asymmetry:</strong> Farmers lack direct visibility into spot Mandi pricing and harvest demand cycles.</li>
+              <li><strong>Over-Reliance on Chemical Retailers:</strong> Commercial vendors frequently prescribe high-margin agrochemicals rather than targeted remedies.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">The Precision Agriculture Paradigm</span>
+              <span class="card-badge badge-green">Engineered Solutions</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Mathematical Nutrient Budgeting:</strong> Calculating exact Nitrogen, Phosphorus, and Potassium demand prevents soil salinity and water table toxicity.</li>
+              <li><strong>Evapotranspiration-Based Water Modeling:</strong> Matching daily irrigation liters to crop phenological growth stages preserves groundwater.</li>
+              <li><strong>Digital Disintermediation:</strong> Connecting farmers directly to buyers via real-time web portals captures 20–30% higher farmgate realization.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout-box">
+          <strong>Strategic Goal:</strong> AgriSmart 360 acts as a zero-barrier, browser-accessible digital decision engine that converts complex agricultural formulas into actionable, instant farm management directives.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 3: Problem Statement & Real-World Inefficiencies
+         ========================================================================= -->
+    <section class="slide" data-slide="3" data-title="Problem Statement & Inefficiencies">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 2.0 : Engineering Motivation</span>
+          <h2 class="slide-title">Problem Statement & Real-World Inefficiencies</h2>
+          <p class="slide-subtitle">Quantified Core Challenges Faced Across Smallholder Agrarian Workflows</p>
+        </div>
+        <span class="slide-num-pill">Slide 03 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">1. Over-Fertilization & Soil Degradation</span>
+              <span class="card-badge badge-red">Soil Pathology</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 10px;">
+              Excessive application of chemical urea and DAP without soil chemistry matching destroys beneficial microbiomes and leads to secondary nutrient lockouts:
+            </p>
+            <ul class="academic-list">
+              <li>Severe ground leaching of excess Nitrates into rural potable water supplies.</li>
+              <li>Imbalanced N:P:K application ratios (often skewed 8:3:1 versus standard 4:2:1).</li>
+              <li>Annual fertilizer expenditure inflated by 35% without corresponding yield uplift.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">2. Groundwater Depletion & Inefficient Flooding</span>
+              <span class="card-badge badge-red">Hydrological Crisis</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 10px;">
+              Agricultural irrigation accounts for 89% of national groundwater extraction, predominantly delivered via unmetered surface flooding:
+            </p>
+            <ul class="academic-list">
+              <li>Lack of stage-specific volumetric calculation results in severe root suffocation.</li>
+              <li>Absence of delivery method guidance (Drip, Sprinkler, Alternate Wetting & Drying).</li>
+              <li>Estimated 40% of irrigation water lost to non-beneficial deep percolation and evaporation.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">3. Middlemen Exploitation at Physical Mandis</span>
+              <span class="card-badge badge-red">Market Injustice</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 10px;">
+              Farmers are constrained to physical APMC markets where commission brokers dictate procurement prices:
+            </p>
+            <ul class="academic-list">
+              <li>Distress selling caused by perishability and lack of digital listing power.</li>
+              <li>Brokers capture 25% to 35% margin between producer and terminal wholesale buyer.</li>
+              <li>Opaque physical ledgers without verifiable transaction histories.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">4. Delayed Pest Diagnostics & Eco-Toxicity</span>
+              <span class="card-badge badge-red">Pathogen Control</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 10px;">
+              Inability to rapidly cross-reference symptoms leads to catastrophic late-stage crop blight:
+            </p>
+            <ul class="academic-list">
+              <li>Reliance on unscientific chemical cocktails that decimate natural pollinator species.</li>
+              <li>Zero awareness or access to biological and organic bio-control alternatives.</li>
+              <li>Pathogen resistance cycles caused by incorrect active-ingredient dosage per acre.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 4: Existing System & Inherent Bottlenecks
+         ========================================================================= -->
+    <section class="slide" data-slide="4" data-title="Existing System & Bottlenecks">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 2.1 : Gap Analysis</span>
+          <h2 class="slide-title">Existing System & Inherent Bottlenecks</h2>
+          <p class="slide-subtitle">Comparative Study: Why Manual Methods & Disjointed Apps Fail the Practical User</p>
+        </div>
+        <span class="slide-num-pill">Slide 04 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="academic-table-wrapper">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th>Evaluation Parameter</th>
+                <th>Traditional / Existing System</th>
+                <th>Commercial Agritech Apps</th>
+                <th>Our AgriSmart 360 Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nutrient Dosage</strong></td>
+                <td>Fixed thumb rules from local fertilizer vendors</td>
+                <td>Locked behind paid proprietary paywalls</td>
+                <td><span class="tag-pass">Scientific NPK split calculation</span></td>
+              </tr>
+              <tr>
+                <td><strong>Water Calculation</strong></td>
+                <td>Timed pump operation (hours of electricity)</td>
+                <td>Complex satellite imaging (high latency)</td>
+                <td><span class="tag-pass">Stage-specific daily Liter volumetric model</span></td>
+              </tr>
+              <tr>
+                <td><strong>Marketplace Access</strong></td>
+                <td>Physical travel, cartage fees, broker commission</td>
+                <td>Large merchant contracts only</td>
+                <td><span class="tag-pass">Direct farmer-to-buyer open listing board</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pest Advisory</strong></td>
+                <td>Broad-spectrum chemical spray recommendations</td>
+                <td>Proprietary product endorsements</td>
+                <td><span class="tag-pass">Dual-action Organic vs. Chemical remedies</span></td>
+              </tr>
+              <tr>
+                <td><strong>System Overhead</strong></td>
+                <td>Paper notebooks and verbal agreements</td>
+                <td>Heavy 100MB+ mobile apps requiring 4G</td>
+                <td><span class="tag-pass">Lightweight SPA (&lt;20KB, instant loads)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-3" style="margin-top: 14px;">
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">Bottleneck A: High Latency</span>
+              <span class="card-badge badge-amber">Architecture</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Existing government portals are heavily multi-page server-rendered architectures that timeout under low-bandwidth 2G/3G rural networks.
+            </p>
+          </div>
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">Bottleneck B: Vendor Lock-in</span>
+              <span class="card-badge badge-amber">Cost</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Private agronomy SaaS systems demand expensive annual recurring subscriptions unaffordable for farmers holding 1–2 acres.
+            </p>
+          </div>
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">Bottleneck C: Siloed Data</span>
+              <span class="card-badge badge-amber">Integration</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              A farmer must consult 3 to 4 distinct portals for fertilizers, water management, market prices, and pest control without unified context.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 5: Proposed System (Our Centralized 3-Tier Solution)
+         ========================================================================= -->
+    <section class="slide" data-slide="5" data-title="Proposed System Architecture">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 3.0 : Proposed Engineering Solution</span>
+          <h2 class="slide-title">Proposed System: Centralized 3-Tier Solution</h2>
+          <p class="slide-subtitle">A Unified High-Performance Decision Support Platform Engineered for Scalability</p>
+        </div>
+        <span class="slide-num-pill">Slide 05 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Core Architecture Pillars</span>
+              <span class="card-badge badge-blue">System Design</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Zero-Overhead Client Tier:</strong> A high-contrast, responsive Single Page Application (SPA) utilizing semantic HTML5 and vanilla JavaScript ES6+. Fast initial paint in under 250 milliseconds.</li>
+              <li><strong>Robust Application Engine:</strong> Java 17 enterprise core powered by Spring Boot 3 REST controllers, stateless service delegates, and JPA repositories.</li>
+              <li><strong>Relational Persistence Tier:</strong> MySQL 8.0 normalized in Third Normal Form (3NF) ensuring ACID transactional guarantees and sub-millisecond query indexing.</li>
+              <li><strong>Defensive Dual Database Mode:</strong> Automatic fallback to an embedded H2 in-memory database ensuring 100% demo resilience during external academic evaluations.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Key Architectural Advantages</span>
+              <span class="card-badge badge-green">Value Proposition</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Decoupled Micro-Layering:</strong> Clear boundary separation between Presentation (UI), Business Logic (Service), and Data Access (Repository).</li>
+              <li><strong>Elimination of CORS Latency:</strong> Packaged as a unified deployable JAR serving both client assets and JSON endpoints on port 8080.</li>
+              <li><strong>Deterministic Agronomic Computations:</strong> Soil texture coefficient matrices dynamically scale base crop requirements without human bias.</li>
+              <li><strong>Zero Intermediary Commercial Channel:</strong> Farmers directly publish harvests with verified contact numbers for instant peer-to-peer trading.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-4" style="margin-top: 10px;">
+          <div class="academic-card" style="padding: 12px 14px;">
+            <strong style="color: var(--primary);">🌱 Soil Agnostic</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Calibrated for Alluvial, Black, Clay, Red, and Sandy soils.</span>
+          </div>
+          <div class="academic-card" style="padding: 12px 14px;">
+            <strong style="color: var(--accent-green);">💧 Water Conservation</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Phenological growth stage factor reduces irrigation waste.</span>
+          </div>
+          <div class="academic-card" style="padding: 12px 14px;">
+            <strong style="color: var(--accent-blue);">🏛️ Real-time Mandi</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Dynamic harvest posting and search with instant DB synchronization.</span>
+          </div>
+          <div class="academic-card" style="padding: 12px 14px;">
+            <strong style="color: var(--accent-purple);">🛡️ Eco-Safety Advisory</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Biological bio-pesticides promoted alongside controlled chemical rates.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 6: Project Objectives (SMART Goals)
+         ========================================================================= -->
+    <section class="slide" data-slide="6" data-title="Project Objectives (SMART Goals)">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 3.1 : Engineering Objectives</span>
+          <h2 class="slide-title">Project Objectives (SMART Framework)</h2>
+          <p class="slide-subtitle">Systematic Engineering Goals Structured According to Rigorous Academic Standards</p>
+        </div>
+        <span class="slide-num-pill">Slide 06 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="academic-card highlight">
+          <div class="grid-1-2">
+            <div>
+              <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 8px;">SMART Engineering Goals</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                Every facet of AgriSmart 360 was planned and executed under the SMART framework to ensure tangible verification during the capstone viva defense.
+              </p>
+            </div>
+            <div class="callout-box green">
+              <strong>Sustainability Alignment:</strong> Directly addresses UN Sustainable Development Goals (SDG 2: Zero Hunger & SDG 12: Responsible Consumption and Production) through targeted input efficiency.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 10px;">
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">🎯 S - Specific</span>
+              <span class="card-badge badge-blue">Scope</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Develop four integrated modules: NPK Nutrient Calculator, Volumetric Water Estimator, Digital Mandi Trading Directory, and Pest Diagnostic Lookup.
+            </p>
+          </div>
+
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">📊 M - Measurable</span>
+              <span class="card-badge badge-green">Metrics</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Achieve &lt;100ms API response latency on local loopback, 100% mathematical precision in NPK formula execution, and zero SQL injection vulnerability.
+            </p>
+          </div>
+
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">⚙️ A - Achievable</span>
+              <span class="card-badge badge-amber">Feasibility</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Implemented using proven, stable technology stacks: Java 17, Spring Boot 3, Hibernate JPA, MySQL 8.0, and pure Vanilla JS without heavyweight dependencies.
+            </p>
+          </div>
+
+          <div class="academic-card">
+            <div class="card-header">
+              <span class="card-title">🌍 R - Relevant</span>
+              <span class="card-badge badge-purple">Impact</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Directly addresses farm income stagnation, excessive groundwater depletion, and chemical soil toxicity in regional agricultural belts.
+            </p>
+          </div>
+
+          <div class="academic-card" style="grid-column: span 2;">
+            <div class="card-header">
+              <span class="card-title">⏱️ T - Time-Bound Milestones</span>
+              <span class="card-badge badge-blue">Sprint Schedule</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Completed in a structured 12-week development lifecycle: Weeks 1–3 (Requirements & Schema Design in 3NF), Weeks 4–7 (REST API & Persistence Layer), Weeks 8–10 (Frontend SPA Integration & Asynchronous Fetch), Weeks 11–12 (Validation, Testing & Documentation).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 7: Key Functional Features Implemented
+         ========================================================================= -->
+    <section class="slide" data-slide="7" data-title="Key Functional Features">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 4.0 : System Capabilities</span>
+          <h2 class="slide-title">Key Functional Features Implemented</h2>
+          <p class="slide-subtitle">Four Core Decision-Support Engines Operating Concurrently on the Live Dashboard</p>
+        </div>
+        <span class="slide-num-pill">Slide 07 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <!-- Feature 1 -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">🌾 1. Fertilizer & Schedule Advisor</span>
+              <span class="card-badge badge-blue">Agronomy Engine</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Dynamic Crop & Soil Calibration:</strong> Takes Crop (Rice, Wheat, Cotton, Maize, Sugarcane) and Soil Type (Alluvial, Black, Clay, Red, Sandy).</li>
+              <li><strong>Algorithmic Adjustment:</strong> Multiplies baseline requirement by soil retention factors (e.g., 1.25x for porous sandy soil, 0.90x for nutrient-rich black soil).</li>
+              <li><strong>Split-Dose Application Schedule:</strong> Calculates Basal Dose (50% at sowing) and two Top-Dressing applications (25% each at tillering and flowering).</li>
+            </ul>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">💧 2. Irrigation Water Calculator</span>
+              <span class="card-badge badge-green">Water Budgeting</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Scientific Volumetric Computation:</strong> Calculates daily crop evapotranspiration demand:
+                <br><code>Daily Liters = Acreage × Growth Stage Factor × 1,000</code></li>
+              <li><strong>Four Phenological Growth Stages:</strong> Germination (2.5), Vegetative (4.0), Flowering / Peak (6.0), and Maturity (3.0).</li>
+              <li><strong>Precision Method Selection:</strong> Recommends optimal delivery technologies (Micro-Drip, Overhead Sprinkler, Furrow, or AWD).</li>
+            </ul>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">🏛️ 3. Mandi Digital Marketplace</span>
+              <span class="card-badge badge-amber">Commodity Board</span>
+            </div>
+            <ul class="academic-list amber-bullets">
+              <li><strong>Live Crop Listing:</strong> Form for publishing Producer Name, Crop Variety, Quantity (Quintals), Expected Price (₹), Mandi Hub, and Mobile.</li>
+              <li><strong>Full Lifecycle Operations:</strong> Real-time CRUD operations allowing farmers to browse active listings, filter by crop type, and remove sold stock.</li>
+              <li><strong>Instant Buyer Direct Dial:</strong> Encodes telephone hyperlinks allowing buyers to contact farmers with zero intermediary brokerage cut.</li>
+            </ul>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="academic-card highlight-purple">
+            <div class="card-header">
+              <span class="card-title">🛡️ 4. Pest Advisory & Dual Remedies</span>
+              <span class="card-badge badge-purple">Integrated IPM</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Symptom Diagnostic Lookup:</strong> Instant keyword search against common crop pathologies (Stem Borer, Blast Disease, Aphids, Rust).</li>
+              <li><strong>Dual-Action Prescription Matrix:</strong> Side-by-side display of:
+                <br>• 🌿 <em>Biological / Organic Remedy:</em> Neem oil, Trichoderma bio-agents.
+                <br>• 🧪 <em>Chemical Spray Dosage:</em> Certified active ingredients & per-acre diluent.</li>
+              <li><strong>Severity Rating:</strong> Categorized by High, Medium, and Preventive levels.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 8: Technology Stack
+         ========================================================================= -->
+    <section class="slide" data-slide="8" data-title="Technology Stack">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 4.1 : Technical Specifications</span>
+          <h2 class="slide-title">Technology Stack: Engineering Tooling</h2>
+          <p class="slide-subtitle">Industry-Standard Enterprise Stack Selected for Reliability, Performance & Maintainability</p>
+        </div>
+        <span class="slide-num-pill">Slide 08 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-4">
+          <!-- Client Tier -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Client Tier</span>
+              <span class="card-badge badge-blue">Frontend</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>HTML5 Semantic:</strong> Clean, accessible DOM markup with zero bloated frameworks.</li>
+              <li><strong>CSS3 Custom Properties:</strong> High-contrast responsive design system with CSS Grid & Flexbox.</li>
+              <li><strong>Vanilla JavaScript (ES6+):</strong> Async/await Fetch API, DOM manipulation, no heavy NPM dependencies.</li>
+            </ul>
+          </div>
+
+          <!-- Application Tier -->
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Application Tier</span>
+              <span class="card-badge badge-green">Backend Core</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Java 17 LTS:</strong> Modern language features (Records, Pattern Matching, Stream API).</li>
+              <li><strong>Spring Boot 3.2:</strong> Auto-configured enterprise REST server with embedded Apache Tomcat 10.</li>
+              <li><strong>Spring Data JPA:</strong> Automated repository layer utilizing Hibernate ORM.</li>
+            </ul>
+          </div>
+
+          <!-- Persistence Tier -->
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">Persistence Tier</span>
+              <span class="card-badge badge-amber">Database</span>
+            </div>
+            <ul class="academic-list amber-bullets">
+              <li><strong>MySQL 8.0 Community:</strong> High-performance InnoDB storage engine with strict referential integrity.</li>
+              <li><strong>HikariCP Connection Pool:</strong> Enterprise-grade database connection lifecycle management.</li>
+              <li><strong>Embedded H2 Database:</strong> Dual-mode in-memory fallback for zero-dependency presentation viva.</li>
+            </ul>
+          </div>
+
+          <!-- Build & DevOps -->
+          <div class="academic-card highlight-purple">
+            <div class="card-header">
+              <span class="card-title">Tooling & Testing</span>
+              <span class="card-badge badge-purple">Ecosystem</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Apache Maven 3.9:</strong> Declarative dependency and project lifecycle management.</li>
+              <li><strong>Postman REST Suite:</strong> Automated API endpoint regression collection included.</li>
+              <li><strong>Git SCM:</strong> Distributed source control with atomic feature commits.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="academic-card" style="margin-top: 6px;">
+          <div class="card-header">
+            <span class="card-title">Architectural Justification: Why Vanilla JS + Spring Boot 3?</span>
+            <span class="card-badge badge-blue">Design Rational</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            Combining a vanilla Single-Page Application (SPA) frontend directly within Spring Boot's <code>src/main/resources/static/</code> directory completely eliminates the operational complexity of running separate Node.js build pipelines and dev servers. The entire full-stack system compiles into a single executable JAR file deployable on any operating system with a standard JRE.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 9: 3-Tier System Architecture & Multi-Port Data Flow
+         ========================================================================= -->
+    <section class="slide" data-slide="9" data-title="3-Tier Architecture & Multi-Port Data Flow">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 5.0 : System Architecture</span>
+          <h2 class="slide-title">3-Tier System Architecture & Multi-Port Flow</h2>
+          <p class="slide-subtitle">End-to-End Enterprise Topology: Port Isolation, Network Protocols & Data Payloads</p>
+        </div>
+        <span class="slide-num-pill">Slide 09 / 20</span>
+      </div>
+      <div class="slide-body">
+        <!-- Visual Architecture Diagram -->
+        <div class="architecture-flow">
+          <!-- Tier 1 -->
+          <div class="arch-tier">
+            <div class="arch-tier-header">
+              <span>TIER 1: PRESENTATION</span>
+              <span class="arch-port-badge">PORT :5500 / :8080</span>
+            </div>
+            <strong style="color: var(--text-main); font-size: 0.9rem;">Browser Client (SPA)</strong>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+              • <code>index.html</code> (Structure)<br>
+              • <code>style.css</code> (Design System)<br>
+              • <code>app.js</code> (DOM & Async Fetch)
+            </p>
+            <div class="callout-box" style="margin-top: 8px; padding: 6px 10px; font-size: 0.75rem;">
+              Direct fetch of REST endpoints with JSON payloads.
+            </div>
+          </div>
+
+          <!-- Connector 1 -->
+          <div class="arch-connector">
+            <span class="arch-payload-label">HTTP / JSON</span>
+            <div class="arch-arrow-line"></div>
+            <span style="font-size: 0.7rem; color: var(--text-light);">REST API</span>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="arch-tier">
+            <div class="arch-tier-header">
+              <span>TIER 2: APPLICATION ENGINE</span>
+              <span class="arch-port-badge">PORT :8080</span>
+            </div>
+            <strong style="color: var(--text-main); font-size: 0.9rem;">Spring Boot 3 Web Server</strong>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+              • <strong>Controllers:</strong> REST API Endpoints<br>
+              • <strong>Services:</strong> Agronomic Calculation Logic<br>
+              • <strong>Repositories:</strong> Spring Data JPA Interfaces
+            </p>
+            <div class="callout-box green" style="margin-top: 8px; padding: 6px 10px; font-size: 0.75rem;">
+              Embedded Apache Tomcat 10 + HikariCP Connection Pool.
+            </div>
+          </div>
+
+          <!-- Connector 2 -->
+          <div class="arch-connector">
+            <span class="arch-payload-label">JDBC / SQL</span>
+            <div class="arch-arrow-line"></div>
+            <span style="font-size: 0.7rem; color: var(--text-light);">TCP Socket</span>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="arch-tier">
+            <div class="arch-tier-header">
+              <span>TIER 3: PERSISTENCE LAYER</span>
+              <span class="arch-port-badge">PORT :3306</span>
+            </div>
+            <strong style="color: var(--text-main); font-size: 0.9rem;">MySQL 8.0 Database</strong>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+              • Database: <code>smart_agri_db</code><br>
+              • Table: <code>crops</code><br>
+              • Table: <code>mandi_listings</code><br>
+              • Table: <code>pest_advices</code>
+            </p>
+            <div class="callout-box amber" style="margin-top: 8px; padding: 6px 10px; font-size: 0.75rem;">
+              InnoDB Engine, ACID Compliant, 3NF Normalized.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 6px;">
+          <div class="academic-card">
+            <strong style="color: var(--primary); font-size: 0.88rem;">1. Decoupled Communication</strong>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+              Frontend communicates purely via standardized JSON contracts. The backend can serve mobile clients, IoT gateways, or external aggregators identically.
+            </p>
+          </div>
+          <div class="academic-card">
+            <strong style="color: var(--accent-green); font-size: 0.88rem;">2. CORS Configuration</strong>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+              Spring's <code>@CrossOrigin</code> annotation permits development on Live Server (Port :5500) while seamlessly delegating API calls to Tomcat (Port :8080).
+            </p>
+          </div>
+          <div class="academic-card">
+            <strong style="color: var(--accent-purple); font-size: 0.88rem;">3. Transactional Safety</strong>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+              HikariCP maintains an active pool of pre-authenticated JDBC connections, mitigating the latency overhead of establishing fresh TCP handshakes for each query.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 10: Application Modules Breakdown
+         ========================================================================= -->
+    <section class="slide" data-slide="10" data-title="Application Modules Breakdown">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 5.1 : Modular Decomposition</span>
+          <h2 class="slide-title">Application Modules Breakdown</h2>
+          <p class="slide-subtitle">Granular Separation of Concerns Across Controllers, Services, and Data Repositories</p>
+        </div>
+        <span class="slide-num-pill">Slide 10 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="academic-table-wrapper">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th>Module Name</th>
+                <th>Controller Component</th>
+                <th>Service Layer Delegate</th>
+                <th>Repository / Entity</th>
+                <th>Primary HTTP Endpoints</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fertilizer Engine</strong></td>
+                <td><code>CalculatorController</code></td>
+                <td><code>CalculatorService</code></td>
+                <td><code>CropRepository</code> (<code>Crop.java</code>)</td>
+                <td>
+                  <code>POST /api/calculate/fertilizer</code><br>
+                  <code>GET /api/calculate/crops</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Water Budgeting</strong></td>
+                <td><code>CalculatorController</code></td>
+                <td><code>CalculatorService</code></td>
+                <td>In-Memory Phenology Matrix</td>
+                <td>
+                  <code>POST /api/calculate/water</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Mandi Marketplace</strong></td>
+                <td><code>MandiController</code></td>
+                <td><code>MandiService</code></td>
+                <td><code>MandiListingRepository</code> (<code>MandiListing.java</code>)</td>
+                <td>
+                  <code>GET /api/mandi</code><br>
+                  <code>POST /api/mandi</code><br>
+                  <code>DELETE /api/mandi/{id}</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pest Advisory</strong></td>
+                <td><code>PestController</code></td>
+                <td><code>PestService</code></td>
+                <td><code>PestAdviceRepository</code> (<code>PestAdvice.java</code>)</td>
+                <td>
+                  <code>GET /api/pest</code><br>
+                  <code>GET /api/pest/search?query=...</code><br>
+                  <code>GET /api/pest/{id}</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-2" style="margin-top: 14px;">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Controller Responsibility</span>
+              <span class="card-badge badge-blue">REST Gateway</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Controllers strictly handle HTTP protocol concerns: deserializing incoming JSON to validated Data Transfer Objects (DTOs), applying CORS headers, executing input validation, and mapping HTTP status codes (200 OK, 201 Created, 404 Not Found).
+            </p>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Service & Repository Responsibility</span>
+              <span class="card-badge badge-green">Domain Isolation</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Services encapsulate domain mathematical formulas, soil multiplier adjustments, and business transaction rules. Repositories interface with the database via Spring Data JPA method signatures without procedural SQL clutter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 11: Database Design (Tables in 3NF, Keys, Constraints)
+         ========================================================================= -->
+    <section class="slide" data-slide="11" data-title="Database Design (3NF & Schema)">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 6.0 : Relational Schema Architecture</span>
+          <h2 class="slide-title">Database Design (3NF Normalized Schema)</h2>
+          <p class="slide-subtitle">Entity-Relationship Modeling, Primary/Foreign Keys, and Data Integrity Constraints</p>
+        </div>
+        <span class="slide-num-pill">Slide 11 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-3">
+          <!-- Table 1 -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">1. Table: <code>crops</code></span>
+              <span class="card-badge badge-blue">Reference Entity</span>
+            </div>
+            <div class="code-block" style="font-size: 0.76rem;">
+<strong>id</strong> BIGINT AUTO_INCREMENT [PK]
+<strong>name</strong> VARCHAR(50) NOT NULL UNIQUE
+<strong>category</strong> VARCHAR(30) NOT NULL
+<strong>base_nitrogen</strong> DOUBLE NOT NULL
+<strong>base_phosphorus</strong> DOUBLE NOT NULL
+<strong>base_potassium</strong> DOUBLE NOT NULL
+<strong>water_factor</strong> DOUBLE NOT NULL
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+              Maintains standardized agronomic baseline parameters per acre.
+            </p>
+          </div>
+
+          <!-- Table 2 -->
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">2. Table: <code>mandi_listings</code></span>
+              <span class="card-badge badge-green">Transactional Entity</span>
+            </div>
+            <div class="code-block" style="font-size: 0.76rem;">
+<strong>id</strong> BIGINT AUTO_INCREMENT [PK]
+<strong>farmer_name</strong> VARCHAR(100) NOT NULL
+<strong>crop_name</strong> VARCHAR(50) NOT NULL
+<strong>quantity_quintals</strong> DOUBLE CHECK(&gt;0)
+<strong>expected_price</strong> DOUBLE CHECK(&gt;0)
+<strong>mandi_location</strong> VARCHAR(100) NOT NULL
+<strong>contact_number</strong> VARCHAR(15) NOT NULL
+<strong>created_at</strong> TIMESTAMP DEFAULT NOW()
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+              Transactional marketplace entries with check constraints.
+            </p>
+          </div>
+
+          <!-- Table 3 -->
+          <div class="academic-card highlight-purple">
+            <div class="card-header">
+              <span class="card-title">3. Table: <code>pest_advices</code></span>
+              <span class="card-badge badge-purple">Knowledge Base</span>
+            </div>
+            <div class="code-block" style="font-size: 0.76rem;">
+<strong>id</strong> BIGINT AUTO_INCREMENT [PK]
+<strong>crop_name</strong> VARCHAR(50) NOT NULL [INDEX]
+<strong>pest_name</strong> VARCHAR(100) NOT NULL
+<strong>symptoms</strong> TEXT NOT NULL
+<strong>organic_remedy</strong> TEXT NOT NULL
+<strong>chemical_remedy</strong> TEXT NOT NULL
+<strong>severity_level</strong> VARCHAR(20) NOT NULL
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+              Pathology lookup indexed on crop for sub-millisecond lookups.
+            </p>
+          </div>
+        </div>
+
+        <div class="academic-card" style="margin-top: 10px;">
+          <div class="card-header">
+            <span class="card-title">Third Normal Form (3NF) Compliance Justification</span>
+            <span class="card-badge badge-green">Database Theory</span>
+          </div>
+          <div class="grid-3" style="gap: 12px; font-size: 0.82rem; color: var(--text-muted);">
+            <div>
+              <strong style="color: var(--text-main);">First Normal Form (1NF):</strong> All attributes contain atomic scalar values (no multi-valued repeating groups or arrays).
+            </div>
+            <div>
+              <strong style="color: var(--text-main);">Second Normal Form (2NF):</strong> All non-key attributes are fully functionally dependent on the primary keys. Zero partial key dependencies.
+            </div>
+            <div>
+              <strong style="color: var(--text-main);">Third Normal Form (3NF):</strong> No transitive functional dependencies exist (e.g. non-key columns do not depend on other non-key columns).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 12: Data Flow Diagrams (Level 0 Context & Level 1 Processes)
+         ========================================================================= -->
+    <section class="slide" data-slide="12" data-title="Data Flow Diagrams (DFD Level 0 & 1)">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 6.1 : Process Modeling</span>
+          <h2 class="slide-title">Data Flow Diagrams (DFD Level 0 & Level 1)</h2>
+          <p class="slide-subtitle">Visual Representation of System Boundaries, Entity Interactivity, and Process Routing</p>
+        </div>
+        <span class="slide-num-pill">Slide 12 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <!-- Level 0 DFD -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">DFD Level 0: Context Analysis</span>
+              <span class="card-badge badge-blue">Context Level</span>
+            </div>
+            <div style="background: var(--bg-subtle); border: 1px dashed var(--border-color); border-radius: var(--radius-sm); padding: 14px; text-align: center;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="background: #ffffff; border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
+                  👨‍🌾 Farmer
+                </div>
+                <div style="font-size: 0.72rem; color: var(--primary); font-weight: 700;">
+                  Inputs (Acreage, Crop, Symptoms) ➔<br>
+                  ⬅ Results (NPK, Water, Mandi Listing)
+                </div>
+                <div style="background: var(--primary-light); border: 2px solid var(--primary); padding: 12px 14px; border-radius: 50%; font-weight: 800; font-size: 0.85rem; color: var(--primary);">
+                  0.0<br>AgriSmart
+                </div>
+                <div style="font-size: 0.72rem; color: var(--accent-green); font-weight: 700;">
+                  ➔ Contact Queries<br>
+                  ⬅ Harvest Feed
+                </div>
+                <div style="background: #ffffff; border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
+                  🏢 Buyer / Trader
+                </div>
+              </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+              Defines the global boundary: External entities (Farmer and Buyer) interact through high-level bidirectional inputs and analytical outputs.
+            </p>
+          </div>
+
+          <!-- Level 1 DFD -->
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">DFD Level 1: Functional Decomposition</span>
+              <span class="card-badge badge-green">Process View</span>
+            </div>
+            <ul class="academic-list green-bullets" style="font-size: 0.82rem;">
+              <li><strong>Process 1.0 (Calculate NPK):</strong> Takes crop variety and soil type; reads baseline from <code>D1: Crops Store</code>; executes soil texture formula; returns dosage & schedule.</li>
+              <li><strong>Process 2.0 (Calculate Water):</strong> Evaluates acreage and phenological stage multiplier; outputs daily liters and recommended irrigation mechanism.</li>
+              <li><strong>Process 3.0 (Manage Mandi Trade):</strong> Receives harvest listing; verifies constraints; writes to <code>D2: Mandi Listings Store</code>; publishes live feed to public board.</li>
+              <li><strong>Process 4.0 (Diagnose Pest):</strong> Accepts symptom query; queries <code>D3: Pest Advice Store</code>; formats organic and chemical mitigation strategies.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout-box" style="margin-top: 6px;">
+          <strong>Data Store Isolation:</strong> Process 1.0 reads from read-only agronomic baselines, whereas Process 3.0 performs dynamic concurrent writes and deletes with transactional rollback safety.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 13: End-to-End User Journey / Workflow
+         ========================================================================= -->
+    <section class="slide" data-slide="13" data-title="End-to-End User Journey / Workflow">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 7.0 : Operational Workflow</span>
+          <h2 class="slide-title">End-to-End User Journey / Workflow</h2>
+          <p class="slide-subtitle">Step-by-Step Practical Scenario of a Farmer Operating the AgriSmart 360 System</p>
+        </div>
+        <span class="slide-num-pill">Slide 13 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="flow-step-chain">
+          <div class="flow-step-node">
+            <div class="flow-step-number">1</div>
+            <div class="flow-step-title">Dashboard Access</div>
+            <div class="flow-step-desc">
+              Farmer navigates to portal via desktop or smartphone browser with instant zero-lag render.
+            </div>
+          </div>
+
+          <div class="flow-step-node">
+            <div class="flow-step-number">2</div>
+            <div class="flow-step-title">NPK Soil Advice</div>
+            <div class="flow-step-desc">
+              Selects "Cotton", "Black Soil", enters 3.5 acres; receives exact N-P-K kg and 3-stage split timetable.
+            </div>
+          </div>
+
+          <div class="flow-step-node">
+            <div class="flow-step-number">3</div>
+            <div class="flow-step-title">Water Budget</div>
+            <div class="flow-step-desc">
+              Selects "Vegetative Stage" (factor 4.0); receives 14,000 L/day requirement & Drip irrigation guidance.
+            </div>
+          </div>
+
+          <div class="flow-step-node">
+            <div class="flow-step-number">4</div>
+            <div class="flow-step-title">Pest Diagnosis</div>
+            <div class="flow-step-desc">
+              Searches "Bollworm"; views dual remedies: Trichoderma biocontrol + Emamectin Benzoate chemical rate.
+            </div>
+          </div>
+
+          <div class="flow-step-node">
+            <div class="flow-step-number">5</div>
+            <div class="flow-step-title">Mandi Listing</div>
+            <div class="flow-step-desc">
+              Posts 50 Quintals at ₹7,200/Q; direct wholesale buyers connect via mobile without middleman fees.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 18px;">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Frontline Experience Advantages</span>
+              <span class="card-badge badge-blue">Usability</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Zero Login Obstacles:</strong> Direct access to critical calculation utilities without mandatory authentication bottlenecks for rapid field decisions.</li>
+              <li><strong>Predictable Visual Feedback:</strong> Toast notifications validate API responses (Green for success, Red for network issues) immediately.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Downstream Agronomic Impact</span>
+              <span class="card-badge badge-green">Outcomes</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Input Cost Savings:</strong> Precise NPK calculations prevent 20–30% fertilizer waste.</li>
+              <li><strong>Aquifer Stewardship:</strong> Volumetric water budgeting curtails excessive pumping.</li>
+              <li><strong>Margin Expansion:</strong> Direct mandi discovery increases net profitability by ₹800–1,500/quintal.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 14: Frontend Interface, Accessible Forms & Responsive Views
+         ========================================================================= -->
+    <section class="slide" data-slide="14" data-title="Frontend Interface & Accessible Design">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 8.0 : Client-Side Engineering</span>
+          <h2 class="slide-title">Frontend Interface & Accessible Design</h2>
+          <p class="slide-subtitle">Vanilla JavaScript SPA, High-Contrast UI System, Client Validation & Toast Alerts</p>
+        </div>
+        <span class="slide-num-pill">Slide 14 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Asynchronous Client Architecture</span>
+              <span class="card-badge badge-blue">Pure JavaScript</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Native Fetch API:</strong> Communicates asynchronously with REST endpoints without page reloads using <code>async/await</code> syntax.</li>
+              <li><strong>Declarative Form Sanitization:</strong> Prevents non-numeric input for acreage, negative harvest quantities, or malformed phone strings prior to network dispatch.</li>
+              <li><strong>Dynamic DOM Rendering:</strong> Injects responsive HTML result cards, nutrient breakdown charts, and table rows seamlessly.</li>
+              <li><strong>Self-Contained Toast Notification System:</strong> Provides non-blocking UI alert banners with timed dismissal animations.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Accessibility & Responsive Design</span>
+              <span class="card-badge badge-green">Standards</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>WCAG 2.1 Contrast Standards:</strong> High-contrast typography (#0f172a navy on #ffffff) ensures crystal-clear readability under bright sunlight or college projectors.</li>
+              <li><strong>CSS Grid & Flexbox Layout:</strong> Adapts automatically between 320px mobile viewports, 1024px classroom projectors, and 1080p desktop monitors.</li>
+              <li><strong>Keyboard & Screen-Reader Accessible:</strong> Explicit <code>&lt;label&gt;</code> tags, descriptive <code>aria-*</code> attributes, and logical tabindex ordering across all forms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="code-block" style="margin-top: 10px;">
+<span class="code-comment">// Sample Client-Side Asynchronous API Dispatch (app.js)</span>
+<span class="code-keyword">async function</span> <span class="code-class">calculateFertilizer</span>(crop, soil, acres) {
+  <span class="code-keyword">const</span> res = <span class="code-keyword">await</span> <span class="code-class">fetch</span>(<span class="code-string">'/api/calculate/fertilizer'</span>, {
+    method: <span class="code-string">'POST'</span>,
+    headers: { <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span> },
+    body: <span class="code-class">JSON</span>.stringify({ crop, soil, acres: <span class="code-class">parseFloat</span>(acres) })
+  });
+  <span class="code-keyword">if</span> (!res.ok) <span class="code-keyword">throw new</span> <span class="code-class">Error</span>(<span class="code-string">'Calculation Failed'</span>);
+  <span class="code-keyword">return await</span> res.json();
+}
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 15: Java Backend Engine & Controller / Service / DAO Architecture
+         ========================================================================= -->
+    <section class="slide" data-slide="15" data-title="Java Backend Engine & Layered Architecture">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 8.1 : Server-Side Engineering</span>
+          <h2 class="slide-title">Java Backend Engine & Layered Architecture</h2>
+          <p class="slide-subtitle">Spring Boot 3 Enterprise Patterns: Separation of Concerns, DTOs & JpaRepository</p>
+        </div>
+        <span class="slide-num-pill">Slide 15 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">1. Controller Layer</span>
+              <span class="card-badge badge-blue">REST API</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+              Annotated with <code>@RestController</code> & <code>@CrossOrigin</code>.
+            </p>
+            <div class="code-block" style="font-size: 0.74rem;">
+@RestController
+@RequestMapping("/api/mandi")
+public class MandiController {
+  @Autowired
+  private MandiService mandiService;
+
+  @PostMapping
+  public ResponseEntity&lt;MandiListing&gt; 
+  create(@RequestBody MandiListing d) {
+    return ResponseEntity.status(201)
+      .body(mandiService.save(d));
+  }
+}
+            </div>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">2. Service Layer</span>
+              <span class="card-badge badge-green">Business Logic</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+              Annotated with <code>@Service</code>. Encapsulates algorithms.
+            </p>
+            <div class="code-block" style="font-size: 0.74rem;">
+@Service
+public class CalculatorService {
+  public FertilizerResponse compute(
+      FertilizerRequest req) {
+    double soilFactor = getFactor(req.getSoil());
+    double n = baseN * soilFactor * req.getAcres();
+    double p = baseP * soilFactor * req.getAcres();
+    double k = baseK * soilFactor * req.getAcres();
+    return new FertilizerResponse(n, p, k);
+  }
+}
+            </div>
+          </div>
+
+          <div class="academic-card highlight-purple">
+            <div class="card-header">
+              <span class="card-title">3. Data Access (DAO)</span>
+              <span class="card-badge badge-purple">Spring Data JPA</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+              Extends <code>JpaRepository&lt;Entity, ID&gt;</code>.
+            </p>
+            <div class="code-block" style="font-size: 0.74rem;">
+@Repository
+public interface MandiListingRepository 
+  extends JpaRepository&lt;MandiListing, Long&gt; {
+  
+  List&lt;MandiListing&gt; 
+    findByCropNameContainingIgnoreCase(
+      String crop);
+      
+  boolean existsById(Long id);
+}
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-box green" style="margin-top: 10px;">
+          <strong>Enterprise Value:</strong> Inversion of Control (IoC) and Dependency Injection (DI) ensure low coupling and maximum testability. Business logic contains zero hardcoded database statements.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 16: Database CRUD Operations (Parameterized SQL & JDBC Queries)
+         ========================================================================= -->
+    <section class="slide" data-slide="16" data-title="Database CRUD Operations & Security">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 9.0 : Data Access & Security</span>
+          <h2 class="slide-title">Database CRUD Operations & Security</h2>
+          <p class="slide-subtitle">Transactional Execution, Parameterized Queries & SQL Injection Mitigation</p>
+        </div>
+        <span class="slide-num-pill">Slide 16 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="academic-table-wrapper">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th>Operation</th>
+                <th>Repository API Method</th>
+                <th>Underlying Parameterized SQL Query (Hibernate ORM)</th>
+                <th>Security Protection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CREATE</strong></td>
+                <td><code>mandiListingRepository.save(listing)</code></td>
+                <td><code>INSERT INTO mandi_listings (farmer_name, crop_name, expected_price, quantity_quintals, mandi_location, contact_number, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)</code></td>
+                <td><span class="tag-pass">PreparedStatement Binding</span></td>
+              </tr>
+              <tr>
+                <td><strong>READ ALL</strong></td>
+                <td><code>mandiListingRepository.findAll()</code></td>
+                <td><code>SELECT id, crop_name, farmer_name, expected_price, quantity_quintals, mandi_location, contact_number, created_at FROM mandi_listings ORDER BY id DESC</code></td>
+                <td><span class="tag-pass">Object-Relational Mapping</span></td>
+              </tr>
+              <tr>
+                <td><strong>SEARCH</strong></td>
+                <td><code>findByCropNameContainingIgnoreCase(q)</code></td>
+                <td><code>SELECT * FROM mandi_listings WHERE UPPER(crop_name) LIKE UPPER(?) ESCAPE '\'</code></td>
+                <td><span class="tag-pass">Wildcard Escaped Query</span></td>
+              </tr>
+              <tr>
+                <td><strong>DELETE</strong></td>
+                <td><code>mandiListingRepository.deleteById(id)</code></td>
+                <td><code>DELETE FROM mandi_listings WHERE id = ?</code></td>
+                <td><span class="tag-pass">Strong Type Safe ID</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-2" style="margin-top: 14px;">
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">SQL Injection Prevention Defense</span>
+              <span class="card-badge badge-green">Vulnerability Nullified</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              By enforcing Hibernate's Parameterized PreparedStatement mechanism, inputs such as <code>' OR '1'='1</code> are treated purely as inert scalar literals rather than executable SQL syntax commands.
+            </p>
+          </div>
+
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Dual-Mode Persistence (MySQL & H2)</span>
+              <span class="card-badge badge-blue">Viva Resilience</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              The persistence layer abstracts the underlying database dialect. The project supports live MySQL 8.0 on port :3306 and instant zero-setup fallback to an embedded H2 in-memory DB if external MySQL servers are unavailable during external evaluation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 17: Acceptance Criteria Verification & Test Results Table
+         ========================================================================= -->
+    <section class="slide" data-slide="17" data-title="Acceptance Criteria & Test Results">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 10.0 : Quality Assurance & Verification</span>
+          <h2 class="slide-title">Acceptance Criteria & Test Results</h2>
+          <p class="slide-subtitle">Formal Test Suite Matrix: Functional Correctness, Boundary Tests & Security Audits</p>
+        </div>
+        <span class="slide-num-pill">Slide 17 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="academic-table-wrapper">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th>Test ID</th>
+                <th>Target Feature / Module</th>
+                <th>Test Condition & Input Vector</th>
+                <th>Expected Outcome</th>
+                <th>Actual Result</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TC-01</strong></td>
+                <td>Fertilizer Formula</td>
+                <td>Crop: Cotton, Soil: Sandy (1.25x), Acres: 4.0</td>
+                <td>N: 350.0kg, P: 175.0kg, K: 175.0kg + 50/25/25 split</td>
+                <td>Accurate split timetable computed</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-02</strong></td>
+                <td>Irrigation Budget</td>
+                <td>Acres: 2.5, Growth Stage: Flowering (6.0)</td>
+                <td>2.5 × 6.0 × 1,000 = 15,000 Liters / Day</td>
+                <td>Computed 15,000 L with Drip advice</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-03</strong></td>
+                <td>Mandi Publish CRUD</td>
+                <td>Valid farmer payload via POST /api/mandi</td>
+                <td>HTTP 201 Created with auto-generated ID & persist in DB</td>
+                <td>Record added to table dynamically</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-04</strong></td>
+                <td>Mandi Input Guard</td>
+                <td>Negative price (-500) or blank contact number</td>
+                <td>Rejected at client and 400 Bad Request at server</td>
+                <td>Form blocked with validation warning</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-05</strong></td>
+                <td>Pest Search Lookup</td>
+                <td>Keyword: "Stem Borer"</td>
+                <td>Returns side-by-side Organic & Chemical dosages</td>
+                <td>Matching symptom card rendered</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-06</strong></td>
+                <td>SQL Injection Test</td>
+                <td>Input payload: <code>admin' OR 1=1 --</code></td>
+                <td>Literal string sanitized, zero unauthorized leakage</td>
+                <td>Sanitized without syntax error</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>TC-07</strong></td>
+                <td>Latency Benchmark</td>
+                <td>50 concurrent GET /api/mandi requests</td>
+                <td>Mean response time &lt; 100ms</td>
+                <td>Avg: 34ms on local Tomcat engine</td>
+                <td><span class="tag-pass">PASS</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box green" style="margin-top: 10px;">
+          <strong>Verification Summary:</strong> 100% test case pass rate achieved across unit, integration, boundary, and performance criteria. Automated Postman test collection validates all REST endpoints.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 18: Live Working Results & Dashboard UI Representation
+         ========================================================================= -->
+    <section class="slide" data-slide="18" data-title="Live Working Results & Dashboard UI">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 11.0 : System Demonstration</span>
+          <h2 class="slide-title">Live Working Results & Dashboard UI</h2>
+          <p class="slide-subtitle">Actual Screen Workflows from the Deployed Single-Page Production Interface</p>
+        </div>
+        <span class="slide-num-pill">Slide 18 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <!-- Card 1: Fertilizer Results -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">🌾 Fertilizer Output Presentation</span>
+              <span class="card-badge badge-blue">Interactive Result</span>
+            </div>
+            <div style="background: var(--bg-subtle); padding: 12px; border-radius: 6px; font-size: 0.82rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <strong>Selected: Rice on Alluvial Soil (3 Acres)</strong>
+                <span style="color: var(--primary); font-weight: 700;">Multiplier: 1.00x</span>
+              </div>
+              <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                <span style="background: #e0f2fe; padding: 4px 8px; border-radius: 4px; font-weight: 700;">N: 180 kg</span>
+                <span style="background: #fef3c7; padding: 4px 8px; border-radius: 4px; font-weight: 700;">P: 90 kg</span>
+                <span style="background: #d1fae5; padding: 4px 8px; border-radius: 4px; font-weight: 700;">K: 90 kg</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.78rem;">
+                <strong>Schedule:</strong> 50% Basal Dose (90kg N, 45kg P, 45kg K) at transplanting + 2 split top dressings at tillering and panicle initiation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Water Results -->
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">💧 Irrigation Volumetric Result</span>
+              <span class="card-badge badge-green">Water Management</span>
+            </div>
+            <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; font-size: 0.82rem;">
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--accent-green); margin-bottom: 4px;">
+                15,000 Liters / Day
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 6px;">
+                Calculated for <strong>2.5 Acres</strong> during <strong>Flowering Stage (Factor: 6.0)</strong>.
+              </p>
+              <div style="font-size: 0.78rem; background: #ffffff; border: 1px solid #bbf7d0; padding: 6px 10px; border-radius: 4px;">
+                <strong>Method:</strong> Micro-Drip Irrigation with 85% water delivery efficiency recommended over furrow flooding.
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Mandi Table -->
+          <div class="academic-card highlight-amber" style="grid-column: span 2;">
+            <div class="card-header">
+              <span class="card-title">🏛️ Active Mandi Commodity Board (Live Data Feed)</span>
+              <span class="card-badge badge-amber">REST Synced</span>
+            </div>
+            <table class="academic-table" style="font-size: 0.8rem;">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Producer</th>
+                  <th>Commodity</th>
+                  <th>Quantity</th>
+                  <th>Quoted Rate</th>
+                  <th>Mandi Center</th>
+                  <th>Direct Contact</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#101</td>
+                  <td><strong>Ramesh Patel</strong></td>
+                  <td>Wheat (Sharbati)</td>
+                  <td>80 Qtl</td>
+                  <td>₹2,450 / Qtl</td>
+                  <td>Indore APMC</td>
+                  <td>+91 98765 43210</td>
+                  <td><button style="font-size: 0.72rem; padding: 2px 6px; border: 1px solid #cbd5e1; border-radius: 3px; background: #fff; cursor: pointer;">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>#102</td>
+                  <td><strong>Suresh Kumar</strong></td>
+                  <td>Cotton (BT)</td>
+                  <td>45 Qtl</td>
+                  <td>₹7,100 / Qtl</td>
+                  <td>Rajkot APMC</td>
+                  <td>+91 98221 11223</td>
+                  <td><button style="font-size: 0.72rem; padding: 2px 6px; border: 1px solid #cbd5e1; border-radius: 3px; background: #fff; cursor: pointer;">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 19: Future Enhancements & Scalability Roadmap
+         ========================================================================= -->
+    <section class="slide" data-slide="19" data-title="Future Enhancements & Scalability">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 12.0 : Technical Roadmap</span>
+          <h2 class="slide-title">Future Enhancements & Scalability Roadmap</h2>
+          <p class="slide-subtitle">Planned Architecture Evolutions for Commercial Precision Agritech Deployment</p>
+        </div>
+        <span class="slide-num-pill">Slide 19 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <!-- Phase 1 & 2 -->
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Phase 1: IoT Sensor Integration</span>
+              <span class="card-badge badge-blue">Hardware Telemetry</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>LoRaWAN / ESP32 Probes:</strong> Integrate wireless soil sensors measuring real-time Nitrogen, Phosphorus, Potassium (NPK), pH, and soil electrical conductivity.</li>
+              <li><strong>Automated Solenoid Valves:</strong> Trigger automated micro-drip pump activations based on real-time soil moisture thresholds rather than manual entries.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Phase 2: Edge AI Computer Vision</span>
+              <span class="card-badge badge-green">Machine Learning</span>
+            </div>
+            <ul class="academic-list green-bullets">
+              <li><strong>Leaf Pathology Classification:</strong> Deploy a lightweight Convolutional Neural Network (CNN / MobileNetV3) via TensorFlow Lite in the browser.</li>
+              <li><strong>Instant Camera Diagnosis:</strong> Enable farmers to snap a smartphone picture of infected foliage for automated real-time pathogen identification.</li>
+            </ul>
+          </div>
+
+          <!-- Phase 3 & 4 -->
+          <div class="academic-card highlight-amber">
+            <div class="card-header">
+              <span class="card-title">Phase 3: Vernacular Voice Interface</span>
+              <span class="card-badge badge-amber">Accessibility</span>
+            </div>
+            <ul class="academic-list amber-bullets">
+              <li><strong>Regional Language IVR:</strong> Implement speech-to-text (Whisper AI / Bhashini API) supporting Hindi, Tamil, Telugu, Marathi, and Kannada.</li>
+              <li><strong>Low-Literacy Mode:</strong> Audio playback of fertilizer dosage timetables and chemical dilution precautions.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight-purple">
+            <div class="card-header">
+              <span class="card-title">Phase 4: Cloud-Native Microservices</span>
+              <span class="card-badge badge-purple">Cloud DevOps</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Docker & Kubernetes:</strong> Containerize application services for elastic autoscaling on AWS / Google Cloud Platform.</li>
+              <li><strong>Kafka Event Streaming:</strong> Broadcast real-time mandi spot price updates across nationwide agricultural wholesale clusters.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SLIDE 20: Conclusion, Summary of Learnings & Viva Defense Q&A
+         ========================================================================= -->
+    <section class="slide" data-slide="20" data-title="Conclusion & Viva Voce Defense">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-category">Section 13.0 : Conclusion & Examination</span>
+          <h2 class="slide-title">Conclusion & Project Viva Voce Defense</h2>
+          <p class="slide-subtitle">Synthesis of Engineering Deliverables, Team Learnings, and Open Defense</p>
+        </div>
+        <span class="slide-num-pill">Slide 20 / 20</span>
+      </div>
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="academic-card highlight-green">
+            <div class="card-header">
+              <span class="card-title">Summary of Project Deliverables</span>
+              <span class="card-badge badge-green">Project Complete</span>
+            </div>
+            <ul class="academic-list check-list">
+              <li>Successfully engineered a production-grade 3-tier precision agriculture platform.</li>
+              <li>Eliminated guesswork by automating scientific NPK nutrient splitting and volumetric daily water calculations.</li>
+              <li>Constructed an intermediary-free Mandi marketplace connecting farmers directly to buyers.</li>
+              <li>Delivered a dual-action pest advisory engine balancing organic biopesticides and chemical solutions.</li>
+              <li>Achieved sub-50ms query responses, 3NF schema compliance, and zero SQL injection flaws.</li>
+            </ul>
+          </div>
+
+          <div class="academic-card highlight">
+            <div class="card-header">
+              <span class="card-title">Core Engineering Competencies Gained</span>
+              <span class="card-badge badge-blue">Skills Mastered</span>
+            </div>
+            <ul class="academic-list">
+              <li><strong>Enterprise Architecture:</strong> Layered MVC architecture, Spring Boot 3 autoconfiguration, and inversion of control.</li>
+              <li><strong>Database Engineering:</strong> 3NF relational normalization, indexing strategies, and JPA / Hibernate ORM lifecycle.</li>
+              <li><strong>Frontend Performance:</strong> Vanilla JavaScript asynchronous state management and high-contrast responsive CSS systems.</li>
+              <li><strong>Quality Assurance:</strong> Systematic test matrix execution and defensive error handling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="academic-card highlight-purple" style="margin-top: 10px; text-align: center; padding: 22px;">
+          <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 6px;">Thank You!</h3>
+          <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 12px;">
+            The floor is now open for questions from the External Examiner and Project Evaluation Committee.
+          </p>
+          <div style="display: inline-flex; gap: 16px; font-weight: 700; font-size: 0.88rem; color: var(--primary);">
+            <span>🌱 AgriSmart 360</span>
+            <span>•</span>
+            <span>Java 17 & Spring Boot 3</span>
+            <span>•</span>
+            <span>MySQL 8.0</span>
+            <span>•</span>
+            <span>Live Demonstration Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM PRESENTATION CONTROLS BAR -->
+  <footer class="pres-footer">
+    <div class="footer-nav-controls">
+      <button class="btn-nav" id="btnPrev" title="Previous Slide (Arrow Left)">
+        ← Prev
+      </button>
+      <button class="btn-nav btn-nav-primary" id="btnNext" title="Next Slide (Arrow Right or Space)">
+        Next →
+      </button>
+      <span class="footer-counter" id="slideLiveCounter">Slide 1 / 20</span>
+    </div>
+
+    <div class="footer-hints">
+      <span>Shortcuts:</span>
+      <span class="kbd-badge">←</span> Prev
+      <span class="kbd-badge">→</span> / <span class="kbd-badge">Space</span> Next
+      <span class="kbd-badge">Home</span> Start
+      <span class="kbd-badge">End</span> Last
+      <span class="kbd-badge">F</span> Fullscreen
+    </div>
+  </footer>
+
+</div>
+
+<!-- VANILLA JAVASCRIPT NAVIGATION ENGINE (ZERO EXTERNAL LIBRARIES) -->
+<script>
+  (function() {
+    'use strict';
+
+    // State Management
+    const TOTAL_SLIDES = 20;
+    let currentSlide = 1;
+
+    // DOM Elements
+    const slides = document.querySelectorAll('.slide');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const slideLiveCounter = document.getElementById('slideLiveCounter');
+    const progressFill = document.getElementById('progressFill');
+    const slideJumpSelect = document.getElementById('slideJumpSelect');
+    const headerTopicDisplay = document.getElementById('headerTopicDisplay');
+    const btnFullscreen = document.getElementById('btnFullscreen');
+
+    // Populate Jump Dropdown
+    slides.forEach((slide, index) => {
+      const slideNum = index + 1;
+      const title = slide.getAttribute('data-title') || `Slide ${slideNum}`;
+      const option = document.createElement('option');
+      option.value = slideNum;
+      option.textContent = `${slideNum.toString().padStart(2, '0')}. ${title}`;
+      slideJumpSelect.appendChild(option);
+    });
+
+    // Render / Transition Function
+    function goToSlide(targetSlide) {
+      if (targetSlide < 1) targetSlide = 1;
+      if (targetSlide > TOTAL_SLIDES) targetSlide = TOTAL_SLIDES;
+
+      currentSlide = targetSlide;
+
+      // Update Slides Visibility
+      slides.forEach((slide) => {
+        const slideIndex = parseInt(slide.getAttribute('data-slide'), 10);
+        if (slideIndex === currentSlide) {
+          slide.classList.add('active');
+          slide.scrollTop = 0;
+          const title = slide.getAttribute('data-title') || 'Capstone Viva Presentation';
+          headerTopicDisplay.textContent = title;
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update Controls State
+      btnPrev.disabled = (currentSlide === 1);
+      btnNext.disabled = (currentSlide === TOTAL_SLIDES);
+      slideLiveCounter.textContent = `Slide ${currentSlide} / ${TOTAL_SLIDES}`;
+      slideJumpSelect.value = currentSlide;
+
+      // Update Live Progress Bar
+      const percentage = (currentSlide / TOTAL_SLIDES) * 100;
+      progressFill.style.width = `${percentage}%`;
+
+      // Save to Session Storage
+      try {
+        sessionStorage.setItem('agrismart_current_slide', currentSlide);
+      } catch (e) {}
+    }
+
+    // Event Handlers for UI Buttons
+    btnPrev.addEventListener('click', () => {
+      goToSlide(currentSlide - 1);
+    });
+
+    btnNext.addEventListener('click', () => {
+      goToSlide(currentSlide + 1);
+    });
+
+    slideJumpSelect.addEventListener('change', (e) => {
+      goToSlide(parseInt(e.target.value, 10));
+    });
+
+    // Fullscreen Toggle
+    btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    });
+
+    // Keyboard Navigation Listener
+    window.addEventListener('keydown', (e) => {
+      // Prevent navigation if interacting with select or input
+      if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      switch (e.key) {
+        case 'ArrowRight':
+        case ' ': // Spacebar
+          e.preventDefault();
+          goToSlide(currentSlide + 1);
+          break;
+
+        case 'ArrowLeft':
+          e.preventDefault();
+          goToSlide(currentSlide - 1);
+          break;
+
+        case 'Home':
+          e.preventDefault();
+          goToSlide(1);
+          break;
+
+        case 'End':
+          e.preventDefault();
+          goToSlide(TOTAL_SLIDES);
+          break;
+
+        case 'f':
+        case 'F':
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen().catch(() => {});
+            }
+          }
+          break;
+
+        default:
+          break;
+      }
+    });
+
+    // Restore last viewed slide or start at 1
+    let initialSlide = 1;
+    try {
+      const saved = sessionStorage.getItem('agrismart_current_slide');
+      if (saved) {
+        const parsed = parseInt(saved, 10);
+        if (parsed >= 1 && parsed <= TOTAL_SLIDES) {
+          initialSlide = parsed;
+        }
+      }
+    } catch (e) {}
+
+    goToSlide(initialSlide);
+
+  })();
+</script>
+
+</body>
+</html>

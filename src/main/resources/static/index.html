@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-icon">🌱</div>
+                <div>
+                    <h1 class="brand-title">AgriSmart 360</h1>
+                    <p class="brand-subtitle">Smart Agriculture Management & Decision Support System</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <span class="status-badge"><span class="dot"></span> Spring Boot 3 API Connected</span>
+                <span class="port-badge">Port: 8080</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Container -->
+    <main class="main-container">
+        
+        <!-- Hero Metrics Banner -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🌾</div>
+                <div class="stat-info">
+                    <span class="stat-label">Supported Crops</span>
+                    <span class="stat-value">5 Major Crops</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🧪</div>
+                <div class="stat-info">
+                    <span class="stat-label">Soil Profiles</span>
+                    <span class="stat-value">5 Types (Alluvial, Black, Clay, Red, Sandy)</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏛️</div>
+                <div class="stat-info">
+                    <span class="stat-label">Mandi Directory</span>
+                    <span class="stat-value" id="statMandiCount">Loading...</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🛡️</div>
+                <div class="stat-info">
+                    <span class="stat-label">Pest Knowledge Base</span>
+                    <span class="stat-value" id="statPestCount">8 Remedies</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs" aria-label="System Modules">
+            <button class="tab-btn active" data-tab="fertilizerTab" id="tabFertilizerBtn">
+                <span class="tab-icon">🌿</span> Fertilizer & N-P-K Advisor
+            </button>
+            <button class="tab-btn" data-tab="waterTab" id="tabWaterBtn">
+                <span class="tab-icon">💧</span> Irrigation Water Calculator
+            </button>
+            <button class="tab-btn" data-tab="mandiTab" id="tabMandiBtn">
+                <span class="tab-icon">🏛️</span> Mandi Marketplace
+            </button>
+            <button class="tab-btn" data-tab="pestTab" id="tabPestBtn">
+                <span class="tab-icon">🛡️</span> Pest Advisory & Remedies
+            </button>
+        </nav>
+
+        <!-- TAB 1: FERTILIZER ADVISOR -->
+        <section id="fertilizerTab" class="tab-content active">
+            <div class="grid-2col">
+                <!-- Input Form Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>🌾 Crop & Soil Parameters</h2>
+                        <p>Calculate scientifically balanced Nitrogen, Phosphorus, and Potassium requirements.</p>
+                    </div>
+                    <form id="fertilizerForm" class="app-form">
+                        <div class="form-group">
+                            <label for="fertCrop">Select Crop</label>
+                            <select id="fertCrop" required>
+                                <option value="" disabled selected>-- Select Crop --</option>
+                                <option value="Rice">Rice (Paddy)</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Maize">Maize (Corn)</option>
+                                <option value="Sugarcane">Sugarcane</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fertSoil">Select Soil Type</label>
+                            <select id="fertSoil" required>
+                                <option value="" disabled selected>-- Select Soil Type --</option>
+                                <option value="Alluvial">Alluvial Soil (Standard Balanced)</option>
+                                <option value="Black">Black Soil (High Retention, Clay-Rich)</option>
+                                <option value="Clay">Clay Soil (Potassium Rich)</option>
+                                <option value="Red">Red Soil (Moderate Leaching)</option>
+                                <option value="Sandy">Sandy Soil (High Porosity, Needs Split Dose)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fertAcreage">Cultivation Area (in Acres)</label>
+                            <input type="number" id="fertAcreage" step="0.1" min="0.1" max="1000" placeholder="e.g. 2.5" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="calcFertBtn">
+                            <span>⚡ Calculate N-P-K Dosage</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Result Card -->
+                <div class="card" id="fertResultCard">
+                    <div class="card-header">
+                        <h2>📊 Nutrient Recommendation</h2>
+                        <span class="badge" id="fertCropBadge">Awaiting Input</span>
+                    </div>
+
+                    <div id="fertEmptyState" class="empty-state">
+                        <div class="empty-icon">🌱</div>
+                        <p>Enter your crop, soil type, and land acreage on the left to compute the customized N-P-K recommendation.</p>
+                    </div>
+
+                    <div id="fertResultContent" class="result-content hidden">
+                        <!-- 3 KPI Cards -->
+                        <div class="npk-grid">
+                            <div class="npk-card npk-n">
+                                <span class="npk-symbol">N</span>
+                                <span class="npk-name">Nitrogen</span>
+                                <div class="npk-val" id="resN">0</div>
+                                <span class="npk-unit">kg total</span>
+                            </div>
+                            <div class="npk-card npk-p">
+                                <span class="npk-symbol">P</span>
+                                <span class="npk-name">Phosphorus</span>
+                                <div class="npk-val" id="resP">0</div>
+                                <span class="npk-unit">kg total</span>
+                            </div>
+                            <div class="npk-card npk-k">
+                                <span class="npk-symbol">K</span>
+                                <span class="npk-name">Potassium</span>
+                                <div class="npk-val" id="resK">0</div>
+                                <span class="npk-unit">kg total</span>
+                            </div>
+                        </div>
+
+                        <!-- Schedule Box -->
+                        <div class="schedule-box">
+                            <h3>📅 Application Schedule & Split Doses</h3>
+                            <p id="fertScheduleText"></p>
+                        </div>
+
+                        <!-- Agronomist Note -->
+                        <div class="info-note">
+                            <strong>💡 Agronomist Note:</strong> <span id="fertRemarksText"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: WATER CALCULATOR -->
+        <section id="waterTab" class="tab-content">
+            <div class="grid-2col">
+                <!-- Input Form Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>💧 Daily Irrigation Assessment</h2>
+                        <p>Standard formula: <code>Water (L) = Acreage × Growth Stage Factor × 1000</code></p>
+                    </div>
+                    <form id="waterForm" class="app-form">
+                        <div class="form-group">
+                            <label for="waterCrop">Crop Name</label>
+                            <select id="waterCrop" required>
+                                <option value="" disabled selected>-- Select Crop --</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Maize">Maize</option>
+                                <option value="Sugarcane">Sugarcane</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="waterAcreage">Field Size (in Acres)</label>
+                            <input type="number" id="waterAcreage" step="0.1" min="0.1" max="1000" placeholder="e.g. 3.0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="waterStage">Growth Stage</label>
+                            <select id="waterStage" required>
+                                <option value="" disabled selected>-- Select Growth Stage --</option>
+                                <option value="Germination">Initial / Germination (Factor: 2.5)</option>
+                                <option value="Vegetative">Vegetative Growth (Factor: 4.0)</option>
+                                <option value="Flowering">Flowering / Mid-Season (Factor: 6.0 - Peak)</option>
+                                <option value="Maturity">Maturity / Late-Season (Factor: 3.0)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="calcWaterBtn">
+                            <span>💧 Calculate Daily Water Need</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Water Result Card -->
+                <div class="card" id="waterResultCard">
+                    <div class="card-header">
+                        <h2>🌊 Daily Water Requirement</h2>
+                        <span class="badge" id="waterStageBadge">Awaiting Input</span>
+                    </div>
+
+                    <div id="waterEmptyState" class="empty-state">
+                        <div class="empty-icon">🚰</div>
+                        <p>Select field acreage and growth stage to compute recommended daily irrigation volume.</p>
+                    </div>
+
+                    <div id="waterResultContent" class="result-content hidden">
+                        <div class="water-hero-stat">
+                            <div class="water-icon-large">💧</div>
+                            <div class="water-hero-val" id="waterLitersVal">0</div>
+                            <div class="water-hero-unit">Liters / Day</div>
+                            <div class="water-substat" id="waterTankersVal">≈ 0 Standard Water Tankers (5000L each)</div>
+                        </div>
+
+                        <div class="formula-breakdown">
+                            <div class="formula-item">
+                                <span class="lbl">Acreage:</span>
+                                <strong id="resWaterAcreage">0 Acres</strong>
+                            </div>
+                            <span class="op">×</span>
+                            <div class="formula-item">
+                                <span class="lbl">Stage Factor:</span>
+                                <strong id="resWaterFactor">0.0</strong>
+                            </div>
+                            <span class="op">×</span>
+                            <div class="formula-item">
+                                <span class="lbl">Constant:</span>
+                                <strong>1,000</strong>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-box">
+                            <h3>🚿 Recommended Delivery Method</h3>
+                            <p id="waterMethodText"></p>
+                        </div>
+
+                        <div class="info-note">
+                            <strong>📌 Note:</strong> <span id="waterNotesText"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: MANDI MARKETPLACE -->
+        <section id="mandiTab" class="tab-content">
+            <div class="mandi-grid">
+                <!-- Post New Listing Form Card -->
+                <div class="card mandi-form-card">
+                    <div class="card-header">
+                        <h2>🏛️ Post Crop to Mandi</h2>
+                        <p>List your harvest directly to local traders and buyers.</p>
+                    </div>
+                    <form id="mandiForm" class="app-form">
+                        <div class="form-group">
+                            <label for="mandiFarmerName">Farmer / Seller Name</label>
+                            <input type="text" id="mandiFarmerName" placeholder="e.g. Ramesh Kumar" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mandiCropName">Crop Variety</label>
+                            <input type="text" id="mandiCropName" placeholder="e.g. Wheat (Sharbati) or Rice (Basmati)" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="mandiQuantity">Quantity (Quintals)</label>
+                                <input type="number" id="mandiQuantity" step="0.5" min="1" placeholder="e.g. 50" required>
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="mandiPrice">Expected Price (₹ / Quintal)</label>
+                                <input type="number" id="mandiPrice" step="10" min="100" placeholder="e.g. 2400" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mandiLocation">Mandi Location</label>
+                            <input type="text" id="mandiLocation" placeholder="e.g. APMC Mandi, Indore (MP)" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mandiPhone">Contact Phone Number</label>
+                            <input type="tel" id="mandiPhone" pattern="[0-9]{10}" placeholder="e.g. 9876543210 (10 digits)" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="postListingBtn">
+                            <span>📢 Publish Marketplace Listing</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Active Listings Table Card -->
+                <div class="card mandi-table-card">
+                    <div class="card-header-flex">
+                        <div>
+                            <h2>📋 Live Mandi Directory</h2>
+                            <p>Real-time farmer listings fetched from MySQL database.</p>
+                        </div>
+                        <button class="btn btn-secondary btn-sm" id="refreshMandiBtn">
+                            🔄 Refresh
+                        </button>
+                    </div>
+
+                    <!-- Search Filter Bar -->
+                    <div class="search-bar">
+                        <input type="text" id="mandiSearchInput" placeholder="🔍 Search by crop or mandi location...">
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table" id="mandiTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Farmer</th>
+                                    <th>Crop</th>
+                                    <th>Quantity</th>
+                                    <th>Expected Price</th>
+                                    <th>Location</th>
+                                    <th>Contact</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mandiTableBody">
+                                <tr>
+                                    <td colspan="8" class="text-center py-4">Loading active mandi listings...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: PEST ADVISORY -->
+        <section id="pestTab" class="tab-content">
+            <div class="card">
+                <div class="card-header-flex">
+                    <div>
+                        <h2>🛡️ Crop Pest & Disease Diagnostic Advisory</h2>
+                        <p>Identify symptoms and review dual remedies: eco-friendly biological control vs chemical dosage.</p>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="pestCropFilter" class="select-filter">
+                            <option value="All">All Crops</option>
+                            <option value="Rice">Rice</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Maize">Maize</option>
+                            <option value="Sugarcane">Sugarcane</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Pest Cards Container -->
+                <div id="pestCardsContainer" class="pest-grid">
+                    <div class="empty-state">
+                        <p>Loading pest advisories from database...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p>Smart Agriculture Management System &bull; College Project Demo &bull; Built with Spring Boot 3, Spring Data JPA & MySQL</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
