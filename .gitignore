@@ -29,6 +29,8 @@ target/
 ### VS Code ###
 .vscode/
 
-### OS Files ###
+### OS & Office Files ###
 Thumbs.db
 .DS_Store
+~$*
+*.tmp
