@@ -1,0 +1,197 @@
+{
+  "info": {
+    "_postman_id": "smart-agri-system-v1",
+    "name": "Smart Agriculture Management System API",
+    "description": "REST API Collection for Smart Agriculture Management System college project (Spring Boot 3, JPA, MySQL)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fertilizer & Water Calculators",
+      "item": [
+        {
+          "name": "Calculate Fertilizer (N-P-K)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cropName\": \"Rice\",\n  \"soilType\": \"Alluvial\",\n  \"acreage\": 2.5\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/calculate/fertilizer",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "calculate", "fertilizer"]
+            }
+          }
+        },
+        {
+          "name": "Calculate Daily Irrigation Water",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cropName\": \"Wheat\",\n  \"acreage\": 3.0,\n  \"growthStage\": \"Flowering\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/calculate/water",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "calculate", "water"]
+            }
+          }
+        },
+        {
+          "name": "Get All Crop Varieties",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/calculate/crops",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "calculate", "crops"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mandi Marketplace",
+      "item": [
+        {
+          "name": "Get All Mandi Listings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/mandi",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "mandi"]
+            }
+          }
+        },
+        {
+          "name": "Post New Mandi Listing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmerName\": \"Kishan Lal\",\n  \"cropName\": \"Soybean\",\n  \"quantityQuintals\": 50.0,\n  \"price\": 4600.0,\n  \"location\": \"Dewas Mandi, MP\",\n  \"phone\": \"9893012345\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/mandi",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "mandi"]
+            }
+          }
+        },
+        {
+          "name": "Delete Mandi Listing by ID",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/mandi/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "mandi", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pest Advisory",
+      "item": [
+        {
+          "name": "Get All Pest Advice",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pest",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pest"]
+            }
+          }
+        },
+        {
+          "name": "Filter Pest Advice by Crop",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pest?crop=Rice",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pest"],
+              "query": [
+                {
+                  "key": "crop",
+                  "value": "Rice"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Pest Advice by Symptom",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pest/search?symptom=Blast",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pest", "search"],
+              "query": [
+                {
+                  "key": "symptom",
+                  "value": "Blast"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Pest Advice by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pest/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pest", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
